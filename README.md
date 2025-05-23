@@ -130,4 +130,3 @@ To stop the server, go back to the terminal window where it's running and press 
 ---
 
 This project provides a good foundation for understanding how real-time web applications can be built. Feel free to explore the code, experiment with changes, and expand upon its features!
-```
