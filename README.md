@@ -19,21 +19,25 @@ The application follows a client-server model:
 1.  **Server (`src/index.js`):**
     *   An **Express.js** server is set up to handle HTTP requests and serve the static client-side files (HTML, CSS, JavaScript from the `public` directory).
     *   **Socket.IO** is integrated with the HTTP server to enable WebSocket connections. WebSockets allow for persistent, two-way communication channels between the server and connected clients.
+      
     *   When a new client connects:
         *   The server listens for a `join` event, where the client provides a username and room name.
         *   The user is added to the specified room (using helper functions in `src/utils/users.js`).
         *   A welcome message is sent to the joining user.
         *   A notification is broadcast to all other users in the room that a new user has joined.
         *   The updated list of users in the room is sent to all clients in that room.
+          
     *   When a client sends a `sendMessage` event:
         *   The server retrieves the user's details.
         *   The message is trimmed and checked for profanity using the `bad-words` filter.
         *   If profane, a warning is sent back to the sender.
         *   Otherwise, the message (formatted by `src/utils/messages.js`) is broadcast to all users in the sender's room.
+          
     *   When a client disconnects:
         *   The user is removed from their room.
         *   A notification is broadcast to the remaining users in the room.
         *   The updated user list is sent to the room.
+          
     *   The server includes logging for connections, disconnections, join events, and messages for easier debugging and understanding the flow.
 
 2.  **Client (Browser - files in `public/` folder):**
@@ -65,12 +69,15 @@ node-chat/
 └── README.md
 ```
 *   **`package.json`**: Defines project metadata, dependencies (like `express`, `socket.io`, `bad-words`), and scripts (e.g., `npm start`).
+  
 *   **`package-lock.json`**: Records the exact versions of installed dependencies, ensuring consistent setups.
+  
 *   **`src/`**: Contains the core server-side application logic.
     *   **`index.js`**: The main entry point for the server. It sets up Express, Socket.IO, and handles all WebSocket event logic (connections, joining rooms, message broadcasting, disconnections).
     *   **`utils/`**: Utility modules to help keep `index.js` cleaner.
         *   **`messages.js`**: Contains a function (`generateMessage`) to format chat messages, typically adding a username and timestamp.
         *   **`users.js`**: Manages user state – adding users to rooms, removing them, fetching user details, and getting a list of users in a specific room.
+          
 *   **`public/`**: Contains all static assets served to the client's browser.
     *   `index.html` (typically): The main HTML page for the chat interface.
     *   `css/styles.css` (typically): CSS rules for styling the chat interface.
