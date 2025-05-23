@@ -46,9 +46,24 @@ The application follows a client-server model:
         *   Listening for `roomData` events to update the list of users in the room.
 
 ## File Structure and Roles
-
-node-chat/ ├── public/ │ ├── index.html │ ├── css/ │ │ └── styles.css │ └── js/ │ └── chat.js ├── src/ │ ├── utils/ │ │ ├── messages.js │ │ └── users.js │ └── index.js ├── .gitignore ├── package-lock.json ├── package.json └── README.md
-
+```
+node-chat/
+├── public/
+│   ├── index.html
+│   ├── css/
+│   │   └── styles.css
+│   └── js/
+│       └── chat.js
+├── src/
+│   ├── utils/
+│   │   ├── messages.js
+│   │   └── users.js
+│   └── index.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 *   **`package.json`**: Defines project metadata, dependencies (like `express`, `socket.io`, `bad-words`), and scripts (e.g., `npm start`).
 *   **`package-lock.json`**: Records the exact versions of installed dependencies, ensuring consistent setups.
 *   **`src/`**: Contains the core server-side application logic.
