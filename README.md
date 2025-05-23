@@ -1,6 +1,3 @@
---- /dev/null
-+++ b/README.md
-@@ -0,0 +1,154 @@
 +# Node.js Real-Time Chat Application
 +
 +## About This Project
@@ -117,15 +114,3 @@
 +
 +This project provides a good foundation for understanding how real-time web applications can be built. Feel free to explore the code, experiment with changes, and expand upon its features!
 +```
-
-**Key changes and why:**
-
-*   **"About This Project"**: Directly incorporates your statement about it being a learning tool and clearly states the technologies explored.
-*   **"Important Note"**: Emphasizes that it's for learning and not production, as per your request.
-*   **"How It Works"**: Provides a more technical (but still accessible) overview of the client-server interaction, mentioning Express, Socket.IO, and the event-driven nature of the communication. It also details the flow for joining, sending messages, and disconnecting based on your `index.js`.
-*   **"File Structure and Roles"**: Updated to accurately reflect the files and their purposes as seen in your `index.js` (e.g., `bad-words` filter, specific utility functions).
-*   **"Getting Started"**: Assumes a user who knows how to use a terminal and `git` (optionally), which is appropriate for someone testing their programming skills.
-*   **Language**: The language is still direct but assumes a bit more technical familiarity than the "absolute newbie" version.
-*   **Logging Mention**: Briefly mentions the server-side logging as it's a useful feature for understanding the flow.
-
-This README should now better reflect the nature of your project and its intended audience.
